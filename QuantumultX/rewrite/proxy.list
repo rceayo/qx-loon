@@ -35,6 +35,7 @@ DOMAIN-SUFFIX,bing.com,OpenAI
 # claude.ai
 DOMAIN-SUFFIX,claude.ai,OpenAI
 DOMAIN-SUFFIX,anthropic.com,OpenAI
+DOMAIN-SUFFIX,intercom.io,OpenAI
 
 
 # 错误分流
