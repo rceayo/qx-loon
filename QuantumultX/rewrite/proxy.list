@@ -14,19 +14,28 @@
 # DOMAIN-SUFFIX,snapdrop.net,DIRECT
 # DOMAIN,download.jetbrains.com,DIRECT
 
-# HOST-SUFFIX,bing.com,DIY
-DOMAIN-SUFFIX,bing.com,OpenAI
-DOMAIN-SUFFIX,google.com,OpenAI
-DOMAIN-SUFFIX,google.dev,OpenAI
-# Google Trust Services
-DOMAIN-SUFFIX,pki.goog,OpenAI
-DOMAIN-SUFFIX,googleusercontent.com,OpenAI
-DOMAIN-SUFFIX,play.googleapis.com,OpenAI
-DOMAIN-SUFFIX,oauthaccountmanager.googleapis.com,OpenAI
-#DOMAIN-SUFFIX,gstatic.com,OpenAI
-DOMAIN-SUFFIX,claude.ai,OpenAI
+# OpenAI
+# HOST-KEYWORD,openai,OpenAI
 DOMAIN-SUFFIX,statsig.com,OpenAI
 DOMAIN,chatgpt.livekit.cloud,OpenAI
+
+# bing GPT4
+DOMAIN-SUFFIX,bing.com,OpenAI
+
+# Google AI gemini
+#DOMAIN-SUFFIX,gemini.google.com,OpenAI
+#DOMAIN-SUFFIX,google.dev,OpenAI
+# Google Trust Services
+#DOMAIN-SUFFIX,pki.goog,OpenAI
+#DOMAIN-SUFFIX,googleusercontent.com,OpenAI
+#DOMAIN-SUFFIX,play.googleapis.com,OpenAI
+#DOMAIN-SUFFIX,oauthaccountmanager.googleapis.com,OpenAI
+##DOMAIN-SUFFIX,gstatic.com,OpenAI
+
+# claude.ai
+DOMAIN-SUFFIX,claude.ai,OpenAI
+DOMAIN-SUFFIX,anthropic.com,OpenAI
+
 
 # 错误分流
 DOMAIN-SUFFIX,t.me,proxy
