@@ -16,11 +16,11 @@
 
 # OpenAI
 # HOST-KEYWORD,openai,OpenAI
-DOMAIN-SUFFIX,statsig.com,OpenAI
-DOMAIN,chatgpt.livekit.cloud,OpenAI
+;DOMAIN-SUFFIX,statsig.com,OpenAI
+;DOMAIN,chatgpt.livekit.cloud,OpenAI
 
 # bing GPT4
-DOMAIN-SUFFIX,bing.com,OpenAI
+;DOMAIN-SUFFIX,bing.com,OpenAI
 
 # Google AI gemini
 #DOMAIN-SUFFIX,gemini.google.com,OpenAI
