@@ -15,9 +15,16 @@
 # DOMAIN,download.jetbrains.com,DIRECT
 
 # OpenAI
-# HOST-KEYWORD,openai,OpenAI
-;DOMAIN-SUFFIX,statsig.com,OpenAI
-;DOMAIN,chatgpt.livekit.cloud,OpenAI
+HOST-KEYWORD,openai,OpenAI
+DOMAIN-SUFFIX,openai.com,OpenAI
+DOMAIN-SUFFIX,chatgpt.com,OpenAI
+DOMAIN-SUFFIX,statsig.com,OpenAI
+DOMAIN-SUFFIX,featureassets.org,OpenAI
+DOMAIN-SUFFIX,prodregistryv2.org,OpenAI
+DOMAIN,chatgpt.livekit.cloud,OpenAI
+IP-CIDR,24.199.123.28/32,OpenAI
+IP-CIDR,64.23.132.171/32,OpenAI
+IP-ASN,20473,OpenAI
 
 # bing GPT4
 ;DOMAIN-SUFFIX,bing.com,OpenAI
@@ -40,6 +47,7 @@ DOMAIN-SUFFIX,intercom.io,OpenAI
 
 # 错误分流
 DOMAIN-SUFFIX,t.me,proxy
+DOMAIN-SUFFIX,apple.com,DIRECT
 
 # 完整域名匹配
 ;host,www.google.com,proxy
@@ -58,7 +66,6 @@ DOMAIN-SUFFIX,jetbrains.com,DIRECT
 
 
 
-
 #IP-CIDR,192.168.3.0/24,DIY
 
 # 公司内网直连, /32 代表IP本身的IP-CIDR
@@ -69,13 +76,15 @@ IP-CIDR,159.138.42.252/32,DIRECT
 # goby
 IP-CIDR,119.13.76.212/32,DIRECT
 # bangbang
-IP-CIDR,101.44.65.236/32,DIRECT
+IP-CIDR,119.12.165.3/32,DIRECT
 # gophish
 IP-CIDR,159.138.58.51/32,DIRECT
+DOMAIN-SUFFIX,ssec.online,DIRECT
+# other
+IP-CIDR,159.138.163.41/32,DIRECT
 DOMAIN-SUFFIX,opayweb.com,DIRECT
 DOMAIN-SUFFIX,opaydev.com,DIRECT
-# gophish
-DOMAIN-SUFFIX,ssec.online,DIRECT
+
 # vps
 IP-CIDR,66.98.116.255/32,DIRECT
 IP-CIDR,129.146.81.234/32,DIRECT
@@ -83,4 +92,3 @@ IP-CIDR,129.153.74.192/32,DIRECT
 IP-CIDR,18.216.177.39/32,DIRECT
 DOMAIN,aws.irce.link,DIRECT
 DOMAIN,txy.irce.link,DIRECT
-
