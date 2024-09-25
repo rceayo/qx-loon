@@ -1,0 +1,35 @@
+# NAME: MyDirect
+# AUTHOR: rceayo
+# REPO: https://github.com/rceayo
+# UPDATED: 2024/9/19 16:36:38
+
+# 如开启其他设置中的  “分流匹配优化” 选项，则匹配优先级为👇
+# host > host-suffix > host-keyword(wildcard) > geoip = ip-cidr > user-agennt
+# 第一块: HOST-SUFFIX: 主机后缀; HOST-KEYWORD: 主机关键字; DOMAIN-SUFFIX: 域名后缀; DOMAIN: 具体域名
+# 第二块: HOST-SUFFIX: ai.com; HOST-KEYWORD: openai; DOMAIN-SUFFIX: ai.com; DOMAIN: chat.openai.com
+# 第三块: 标识: DIRECT: 直连; OpenAI: 自定义的static标签
+# 完整域名匹配
+;HOST,www.google.com,PROXY
+# 域名关键词匹配
+;HOST-KEYWORD,adsite,REJECT
+# 域名后缀匹配
+;HOST-SUFFIX,ai.com,PROXY
+# 域名通配符匹配
+;HOST-WILDCARD,*abc.com,PROXY
+# 完整域名匹配
+DOMAIN,download.jetbrains.com,DIRECT
+# 域名后缀匹配
+DOMAIN-SUFFIX,jetbrains.com,DIRECT
+# User-Agent 匹配
+;USER-AGENT, ?abc*, PROXY
+
+# claude.ai
+DOMAIN-SUFFIX,claude.ai,OpenAI
+DOMAIN-SUFFIX,anthropic.com,OpenAI
+DOMAIN-SUFFIX,intercom.io,OpenAI
+
+# 错误分流
+DOMAIN-SUFFIX,t.me,PROXY
+# 苹果播客问题
+DOMAIN-SUFFIX,amp-api.podcasts.apple.com,PROXY
+DOMAIN-SUFFIX,podcasts.apple.com,PROXY

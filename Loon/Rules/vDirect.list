@@ -1,71 +1,29 @@
-# NAME: MyProxy
-# AUTHOR: Allen
-# REPO: https://github.com/Freakboy
-# UPDATED: 2023/9/19 16:36:38
+# NAME: MyDirect
+# AUTHOR: rceayo
+# REPO: https://github.com/rceayo
+# UPDATED: 2024/9/19 16:36:38
 
 # 如开启其他设置中的  “分流匹配优化” 选项，则匹配优先级为👇
 # host > host-suffix > host-keyword(wildcard) > geoip = ip-cidr > user-agennt
-
 # 第一块: HOST-SUFFIX: 主机后缀; HOST-KEYWORD: 主机关键字; DOMAIN-SUFFIX: 域名后缀; DOMAIN: 具体域名
 # 第二块: HOST-SUFFIX: ai.com; HOST-KEYWORD: openai; DOMAIN-SUFFIX: ai.com; DOMAIN: chat.openai.com
 # 第三块: 标识: DIRECT: 直连; OpenAI: 自定义的static标签
-# HOST-SUFFIX,ai.com,OpenAI
-# HOST-KEYWORD,openai,OpenAI
-# DOMAIN-SUFFIX,snapdrop.net,DIRECT
-# DOMAIN,download.jetbrains.com,DIRECT
-
-# OpenAI
-HOST-KEYWORD,openai,OpenAI
-DOMAIN-SUFFIX,openai.com,OpenAI
-DOMAIN-SUFFIX,chatgpt.com,OpenAI
-DOMAIN-SUFFIX,statsig.com,OpenAI
-DOMAIN-SUFFIX,featureassets.org,OpenAI
-DOMAIN-SUFFIX,prodregistryv2.org,OpenAI
-DOMAIN,chatgpt.livekit.cloud,OpenAI
-IP-CIDR,24.199.123.28/32,OpenAI
-IP-CIDR,64.23.132.171/32,OpenAI
-IP-ASN,20473,OpenAI
-
-# bing GPT4
-;DOMAIN-SUFFIX,bing.com,OpenAI
-
-# Google AI gemini
-#DOMAIN-SUFFIX,gemini.google.com,OpenAI
-#DOMAIN-SUFFIX,google.dev,OpenAI
-# Google Trust Services
-#DOMAIN-SUFFIX,pki.goog,OpenAI
-#DOMAIN-SUFFIX,googleusercontent.com,OpenAI
-#DOMAIN-SUFFIX,play.googleapis.com,OpenAI
-#DOMAIN-SUFFIX,oauthaccountmanager.googleapis.com,OpenAI
-##DOMAIN-SUFFIX,gstatic.com,OpenAI
-
-# claude.ai
-DOMAIN-SUFFIX,claude.ai,OpenAI
-DOMAIN-SUFFIX,anthropic.com,OpenAI
-DOMAIN-SUFFIX,intercom.io,OpenAI
-
-
-# 错误分流
-DOMAIN-SUFFIX,t.me,proxy
-DOMAIN-SUFFIX,apple.com,DIRECT
-
 # 完整域名匹配
-;host,www.google.com,proxy
+;HOST,www.google.com,PROXY
 # 域名关键词匹配
-;host-keyword,adsite,reject
+;HOST-KEYWORD,adsite,REJECT
 # 域名后缀匹配
-;host-suffix,ai.com,proxy
+;HOST-SUFFIX,ai.com,PROXY
 # 域名通配符匹配
-;host-wildcard,*abc.com,proxy
+;HOST-WILDCARD,*abc.com,PROXY
 # 完整域名匹配
 DOMAIN,download.jetbrains.com,DIRECT
 # 域名后缀匹配
 DOMAIN-SUFFIX,jetbrains.com,DIRECT
 # User-Agent 匹配
-;user-agent, ?abc*, proxy
+;USER-AGENT, ?abc*, PROXY
 
-
-
+# PI
 #IP-CIDR,192.168.3.0/24,DIY
 
 # 公司内网直连, /32 代表IP本身的IP-CIDR
