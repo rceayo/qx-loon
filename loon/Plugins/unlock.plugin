@@ -13,4 +13,4 @@ http-response ^https?:\/\/(api|member)\.(aliyundrive|alipan)\.com\/(.+\/(users|a
 
 #************************************#
 [MITM]
-hostname = api.changecollective.com, *.aliyundrive.com, *.alipan.com
+hostname = *.aliyundrive.com, *.alipan.com
