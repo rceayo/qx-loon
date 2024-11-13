@@ -1,0 +1,16 @@
+#!name = DIY解锁合集
+#!icon=https://raw.githubusercontent.com/chxm1023/Task/main/icon/ddm.png
+
+
+# 编写时间 2024年 9月27日
+# https://raw.githubusercontent.com/chxm1023/Script_X/main/Collections.plugin
+#************************************#
+# 阿里云盘 净化/解锁SVIP
+# hostname = *.aliyundrive.com, *.alipan.com
+http-response ^https?:\/\/(api|member)\.(aliyundrive|alipan)\.com\/(.+\/(users|activity|user\/get)|((business|apps)\/.+\/users|adrive\/.+\/user)) script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/alidrive.js, requires-body=true, tag=阿里网盘
+
+
+
+#************************************#
+[MITM]
+hostname = *.aliyundrive.com, *.alipan.com
